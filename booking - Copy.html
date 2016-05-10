@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Seat Booking</title>
+
+<style type="text/css">
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #dfdfdf;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+.container {
+	max-width:960px;
+	background: #FFF;
+	margin: 0 auto; 
+}
+
+.content {
+	padding: 10px;
+	text-align:center;
+}
+
+.submit {
+	padding: 2px 25px;
+}
+
+table.bordered {
+	width: 400px;
+	border:solid thin #999;
+	border-collapse: collapse;
+}
+
+.available-seat {
+	height: 20px;
+	width: 20px;
+	background:#FFF;
+	border:solid thin #999;
+}
+
+.reserved-seat {
+	height: 20px;
+	width: 20px;
+	background:#999;
+	border:solid thin #999;
+}
+
+.selected-seat {
+	height: 20px;
+	width: 20px;
+	background:#0C0;
+	border:solid thin #999;
+}
+
+</style>
+</head>
+
+<body>
+	<div class="container">
+  		<div class="content">
+    		<h3>Movie Ticket Booking</h3>
+                        
+            <form action="booking.html" method="get">
+            	<input id="name" type="text" Placeholder="Name">
+                <input id="seats" type="text" Placeholder="No. of seats">
+                <input class="submit" type="button" value="Select Seats" onClick="selectSeats()">
+            </form>
+            
+            <table align="center" cellpadding="2"><tr>
+            <td>
+                        
+            <p>SCREEN THIS WAY</p>
+            
+            <table align="center" cellpadding="6">
+            	<tr>
+                	<td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                
+                <tr>
+                	<td>A</td>
+                    <td><a href="#" onClick="clickSeat('A1')"><div id="A1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A2')"><div id="A2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A3')"><div id="A3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A4')"><div id="A4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A5')"><div id="A5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A6')"><div id="A6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('A7')"><div id="A7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A8')"><div id="A8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A9')"><div id="A9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('A10')"><div id="A10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                	<td>B</td>
+                    <td><a href="#" onClick="clickSeat('B1')"><div id="B1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B2')"><div id="B2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B3')"><div id="B3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B4')"><div id="B4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B5')"><div id="B5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B6')"><div id="B6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('B7')"><div id="B7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B8')"><div id="B8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B9')"><div id="B9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('B10')"><div id="B10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                	<td>C</td>
+                    <td><a href="#" onClick="clickSeat('C1')"><div id="C1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C2')"><div id="C2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C3')"><div id="C3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C4')"><div id="C4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C5')"><div id="C5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C6')"><div id="C6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('C7')"><div id="C7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C8')"><div id="C8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C9')"><div id="C9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('C10')"><div id="C10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                	<td>D</td>
+                    <td><a href="#" onClick="clickSeat('D1')"><div id="D1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D2')"><div id="D2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D3')"><div id="D3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D4')"><div id="D4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D5')"><div id="D5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D6')"><div id="D6" class="available-seat"></div></a></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="#" onClick="clickSeat('D7')"><div id="D7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D8')"><div id="D8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D9')"><div id="D9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('D10')"><div id="D10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                	<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                                
+                <tr>
+                	<td>E</td>
+                    <td><a href="#" onClick="clickSeat('E1')"><div id="E1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E2')"><div id="E2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E3')"><div id="E3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E4')"><div id="E4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E5')"><div id="E5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E6')"><div id="E6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('E7')"><div id="E7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E8')"><div id="E8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E9')"><div id="E9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('E10')"><div id="E10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                	<td>F</td>
+                    <td><a href="#" onClick="clickSeat('F1')"><div id="F1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F2')"><div id="F2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F3')"><div id="F3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F4')"><div id="F4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F5')"><div id="F5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F6')"><div id="F6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('F7')"><div id="F7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F8')"><div id="F8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F9')"><div id="F9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('F10')"><div id="F10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                x	<td>G</td>
+                    <td><a href="#" onClick="clickSeat('G1')"><div id="G1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G2')"><div id="G2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G3')"><div id="G3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G4')"><div id="G4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G5')"><div id="G5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G6')"><div id="G6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('G7')"><div id="G7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G8')"><div id="G8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G9')"><div id="G9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('G10')"><div id="G10" class="available-seat"></div></a></td>
+                </tr>
+                
+                <tr>
+                	<td>H</td>
+                    <td><a href="#" onClick="clickSeat('H1')"><div id="H1" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H2')"><div id="H2" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H3')"><div id="H3" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H4')"><div id="H4" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H5')"><div id="H5" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H6')"><div id="H6" class="available-seat"></div></a></td>
+                    <td></td>
+                    <td><a href="#" onClick="clickSeat('H7')"><div id="H7" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H8')"><div id="H8" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H9')"><div id="H9" class="available-seat"></div></a></td>
+                    <td><a href="#" onClick="clickSeat('H10')"><div id="H10" class="available-seat"></div></a></td>
+                </tr>
+                
+            </table>
+            <br/>
+            <input class="submit" type="button" value="Confirm Booking" onClick="confirmBooking()">
+            <br/><br/>
+            
+            <table align="center" cellpadding="10"><tr>
+            <td><div class="selected-seat"></div></td><td>Selected </td>
+            <td><a href="#" onclick=""><div class="available-seat"></div></a></td><td>Available </td>
+            <td><div class="reserved-seat"></div></td><td>Reserved</td>
+            </tr></table>
+            <br/>
+            
+            </td>
+            <td>
+            
+            <table id="db-table" class="bordered" align="center" cellpadding="8">
+                <tr>
+                    <td>Name</td>
+                    <td>No. of seats</td>
+                    <td>Seat Details</td>
+                </tr>                
+            </table>
+            
+            </td></tr></table>
+            
+    	</div>
+  	</div>
+    
+<script type="text/javascript" src=""></script>    
+<script type="text/javascript">
+
+var max_rows = 8;
+var max_columns = 10;
+var max_available_seats = max_rows * max_columns;
+var total_seats_booked = 0;
+
+var db_store = new Array();
+
+var name = "";
+var seats_to_be_booked = 0;
+var current_selected_seats = 0;
+var current_selected_seats_nos = new Array();
+
+function selectSeats() {
+	name = document.getElementById('name').value;
+	seats_to_be_booked = document.getElementById('seats').value;
+	if(max_available_seats - total_seats_booked < seats_to_be_booked) {
+		alert(seats_to_be_booked + ' seats not available');
+		document.getElementById('seats').value = "";
+	}
+}
+
+function clickSeat(seatId){
+	//seats_to_be_booked = document.getElementById('seats').value;
+	var c = document.getElementById(seatId);		
+	if(c.className == 'available-seat' && (seats_to_be_booked - current_selected_seats > 0)) {
+		c.className = 'selected-seat';
+		current_selected_seats++;
+		current_selected_seats_nos.push(seatId);
+	}
+	else if(c.className == 'selected-seat') {
+		c.className = 'available-seat';
+		current_selected_seats--;
+		var index = current_selected_seats_nos.indexOf(seatId);
+		if (index > -1)
+		    current_selected_seats_nos.splice(index, 1);
+	}
+}
+
+function confirmBooking() {
+	if(current_selected_seats < seats_to_be_booked)
+		alert((seats_to_be_booked - current_selected_seats) + ' seats left to select');
+	else {
+		current_selected_seats_nos.sort();
+		for (i=0;i<current_selected_seats;i++){
+			var c = document.getElementById(current_selected_seats_nos[i]);
+			c.className = 'reserved-seat';		
+			//document.write(current_selected_seats_nos[i] + "<br/>");
+		}	
+		
+		total_seats_booked += current_selected_seats;
+		
+		db_store[db_store.length-1] = new Array();
+		db_store[db_store.length-1][0] = name;
+		db_store[db_store.length-1][1] = seats_to_be_booked; 
+		current_selected_seats_nos.toString();
+		db_store[db_store.length-1][2] = current_selected_seats_nos;
+		
+		var table = document.getElementById("db-table");
+		var row = table.insertRow(db_store[db_store.length]);		
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		cell1.innerHTML = db_store[db_store.length-1][0];
+		cell2.innerHTML = db_store[db_store.length-1][1];
+		cell3.innerHTML = db_store[db_store.length-1][2];
+		
+		// Reset all current booking values
+		document.getElementById('name').value = "";
+		document.getElementById('seats').value = "";	
+		name = "";
+		seats_to_be_booked = 0;
+		current_selected_seats = 0;
+		current_selected_seats_nos = new Array();
+
+	}
+}
+
+</script>
+    
+</body>
+</html>
